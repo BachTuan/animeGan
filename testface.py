@@ -6,9 +6,9 @@ import numpy as np
 
 from model import Generator
 class video2anime:
-    def __init__(self):
-        self.device = 'cpu'
-        self.image_size = 960 # Can be tuned, works best when the face width is between 200~250 px
+    def __init__(self, device, size):
+        self.device = device
+        self.image_size = size # Can be tuned, works best when the face width is between 200~250 px
         self.model = Generator().eval().to(self.device)
         torch.set_grad_enabled(False)
         self.ckpt = torch.load(f"checkpoint/generator_celeba_distill.pt", map_location=self.device)

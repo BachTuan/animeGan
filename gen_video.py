@@ -47,7 +47,7 @@ def video_to_frames(video_in, video_out, tface):
             break
 
 if __name__=="__main__":
-    tface = video2anime()
-    video_in = "final_audio.mp4"
+    tface = video2anime("cuda:0", 960)
+    video_in = "1.mp4"
     video_out = "out.mp4"
     video_to_frames(video_in, video_out, tface)
